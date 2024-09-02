@@ -10,43 +10,17 @@ const userSchema = new Schema(
     },
     email: {
       type: String,
-      required: true,
       unique: true,
-      minLength: 5,
-      maxLength: 100,
     },
-    password: {
+    fb_id: {
       type: String,
-      minLength: 8,
-      maxLength: 100,
+      unique: true,
     },
     gender: {
       type: String,
-      enum: ["male", "female"],
+      enum: ["male", "female", "other"],
     },
-    address: {
-      type: String,
-      minLength: 5,
-      maxLength: 200,
-    },
-    phone: String,
-    bath_date: Date,
     is_agree: Boolean,
-    about_you: {
-      type: String,
-      minLength: 5,
-      maxLength: 500,
-    },
-    role: {
-      type: String,
-      enum: ["admin", "user"],
-      default: "user",
-    },
-    email_verify: {
-      type: String,
-      enum: ["verified", "unverified"],
-      default: "unverified",
-    },
   },
   {
     timestamps: true,

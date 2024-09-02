@@ -9,20 +9,19 @@ module.exports = () => {
       {
         clientID: process.env.FACEBOOK_APP_ID,
         clientSecret: process.env.FACEBOOK_APP_SECRET,
-        callbackURL: process.env.GOOGLE_OAUTH_CALLBACK_URL,
+        callbackURL: process.env.FACEBOOK_APP_CALLBACK_URL,
       },
       async (accessToken, refreshToken, profile, done) => {
         if (profile) {
           const isExist = await User.findOne({
-            email: profile?.email,
+            fb_id: profile?.id,
           });
 
           if (!isExist) {
             const user = new User({
-              role: "user",
-              email: profile?.email,
-              email_verify: "verified",
+              fb_id: profile?.id,
               user_name: profile?.displayName,
+              email: profile?.email ? profile?.email : "",
             });
 
             await user.save();

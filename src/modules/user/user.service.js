@@ -4,7 +4,7 @@ const generateAccessToken = (user) => {
   const access_token = jwt.sign(
     {
       id: user.id,
-      role: user.role,
+      role: user?.role,
     },
     process.env.COOKIE_PARSER_TOKEN,
     {

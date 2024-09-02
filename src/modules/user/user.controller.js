@@ -8,13 +8,13 @@ const userGoogleLoginCallBack = async (req, res, next) => {
 
     const payload = {
       id: user.id,
-      name: user.name,
+      user_name: user.user_name,
       email: user.email,
     };
 
     const accessToken = generateAccessToken(payload);
 
-    nodemailer(contactMail(user.email, user.name, "Login successfully"));
+    nodemailer(contactMail(user.email, user.user_name, "Login successfully"));
 
     res.cookie("access_token", accessToken, {
       httpOnly: true,
@@ -36,14 +36,14 @@ const userFacebookLoginCallBack = async (req, res, next) => {
 
     const payload = {
       id: user.id,
-      name: user.name,
-      email: user.email,
+      user_name: user.user_name,
+      email: user?.email,
     };
 
     const accessToken = generateAccessToken(payload);
 
 
-    nodemailer(contactMail(user.email, user.name, "Login successfully"));
+    nodemailer(contactMail(user?.fb_id, user.user_name, "Login successfully"));
 
     res.cookie("access_token", accessToken, {
       httpOnly: true,

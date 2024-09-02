@@ -1,6 +1,7 @@
 const path = require("path");
 const cors = require("cors");
 const express = require("express");
+const connectDB = require("../db");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const config = require(path.join(process.cwd(), "src/config"));
@@ -8,6 +9,8 @@ const serverError = require(path.join(process.cwd(), "src/config/middlewares/ser
 
 module.exports = async () => {
   const app = express();
+
+  await connectDB();
 
   const allowedOrigins = process.env.FRONTEND_BASE_URL.split(",");
 

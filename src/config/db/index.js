@@ -11,6 +11,9 @@ connectionURL = `${connectionURL}/${process.env.DB_NAME}?${process.env.DB_URL_QU
 const connectDB = async () => {
   await mongoose.connect(connectionURL, {
     dbName: process.env.DB_NAME,
+    ssl: true,
+    tlsAllowInvalidCertificates: true,
+    tlsAllowInvalidHostnames: true,
   });
   console.log("Connected to database successfully! 🔗");
 };
