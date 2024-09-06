@@ -17,16 +17,6 @@ module.exports = () => {
             email: profile?.email,
           });
 
-          // {
-          //   sub: '103268665175895568560',
-          //   name: 'Amanullha Zoha',
-          //   given_name: 'Amanullha',
-          //   family_name: 'Zoha',
-          //   picture: 'https://lh3.googleusercontent.com/a/ACg8ocJaZj-n4tWktDS_vMltZlq-u0eRwhh6ajk1_4348MJDa8MyjfQ=s96-c',
-          //   email: 'amanullhazoha3784@gmail.com',
-          //   email_verified: true
-          // }
-
           if (!isExist) {
             const user = new User({
               email: profile?.email,

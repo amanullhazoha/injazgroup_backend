@@ -36,8 +36,8 @@ const userFacebookLoginCallBack = async (req, res, next) => {
 
     const payload = {
       id: user.id,
-      user_name: user.user_name,
-      email: user?.email,
+      fb_id: user?.fb_id,
+      user_name: user?.user_name,
     };
 
     const accessToken = generateAccessToken(payload);
