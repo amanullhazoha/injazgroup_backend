@@ -10,14 +10,10 @@ const userSchema = new Schema(
     },
     email: {
       type: String,
-      unique: true,
-      sparse: true,
       default: null,
     },
     fb_id: {
       type: String,
-      unique: true,
-      sparse: true,
       default: null,
     },
     gender: {
