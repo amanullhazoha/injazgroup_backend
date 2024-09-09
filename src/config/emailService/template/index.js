@@ -1,6 +1,5 @@
 const fs = require("fs")
 const path = require("path");
-const pdfFile = require("../../assets/files/services_rival.pdf")
 
 const contactMail = (email, user_name, message) => {
     return {
@@ -11,8 +10,7 @@ const contactMail = (email, user_name, message) => {
       attachments: [
         {
           filename: 'services-rival.pdf',
-          contentType: 'application/pdf',
-          content: pdfFile,
+          path: "../../assets/files/services_rival.pdf",
         },
       ],
     };
