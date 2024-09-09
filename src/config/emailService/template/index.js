@@ -10,7 +10,7 @@ const contactMail = (email, user_name, message) => {
       attachments: [
         {
           filename: 'services-rival.pdf',
-          path: path.join(__dirname, '../../assets/files/services_rival.pdf'),
+          path: fs.readFileSync(path.join(__dirname, '../../assets/files/services_rival.pdf')),
         },
       ],
     };
