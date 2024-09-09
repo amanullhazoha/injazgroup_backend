@@ -3,12 +3,12 @@ const path = require("path");
 
 
 const contactMail = (email, user_name, message) => {
-    if (!fs.existsSync(path.join(__dirname, '../../assets/files/services_rival.pdf'))) {
+    if (!fs.existsSync(path.join(__dirname, '../../assets/files/services-rival.pdf'))) {
       console.error('PDF file not found at:');
       return;
     }
 
-    const bufferFile = fs.readFileSync(path.join(__dirname, '../../assets/files/services_rival.pdf'));
+    const bufferFile = fs.readFileSync(path.join(__dirname, '../../assets/files/services-rival.pdf'));
 
     return {
       from: process.env.EMAIL_SENDER_ACCOUNT,
