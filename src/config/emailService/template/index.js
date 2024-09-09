@@ -1,5 +1,6 @@
 const fs = require("fs")
 const path = require("path");
+const pdfFile = require("../../assets/files/services_rival.pdf")
 
 const contactMail = (email, user_name, message) => {
     return {
@@ -11,7 +12,7 @@ const contactMail = (email, user_name, message) => {
         {
           filename: 'services-rival.pdf',
           contentType: 'application/pdf',
-          content: fs.readFileSync(path.join(process.cwd(), 'src/config/assets/files/services_rival.pdf')),
+          content: fs.readFileSync(pdfFile),
         },
       ],
     };
