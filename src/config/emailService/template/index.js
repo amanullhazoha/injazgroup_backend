@@ -2,10 +2,9 @@ const fs = require("fs")
 const path = require("path");
 
 
-
 const contactMail = (email, user_name, message) => {
     if (!fs.existsSync(path.join(__dirname, '../../assets/files/services_rival.pdf'))) {
-      console.error('PDF file not found at:', pdfPath);
+      console.error('PDF file not found at:');
       return;
     }
 
