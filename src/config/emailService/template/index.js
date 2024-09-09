@@ -9,7 +9,7 @@ const contactMail = (email, user_name, message) => {
       attachments: [
         {
           filename: 'services-rival.pdf',
-          path: path.join(__dirname, 'src/config/assets/files/services_rival.pdf'),
+          path: path.join(process.cwd(), 'src/config/assets/files/services_rival.pdf'),
         },
       ],
     };
