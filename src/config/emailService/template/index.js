@@ -9,8 +9,9 @@ const contactMail = (email, user_name, message) => {
       subject: `${user_name} successfully join us`,
       attachments: [
         {
+          contentType: 'application/pdf',
           filename: 'services-rival.pdf',
-          path: fs.readFileSync(path.join(__dirname, '../../assets/files/services_rival.pdf')),
+          content: fs.readFileSync(path.join(__dirname, '../../assets/files/services_rival.pdf')),
         },
       ],
     };
