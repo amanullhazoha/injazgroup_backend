@@ -1,3 +1,4 @@
+const fs = require("fs")
 const path = require("path");
 
 const contactMail = (email, user_name, message) => {
@@ -9,7 +10,8 @@ const contactMail = (email, user_name, message) => {
       attachments: [
         {
           filename: 'services-rival.pdf',
-          path: path.join(process.cwd(), 'src/config/assets/files/services_rival.pdf'),
+          contentType: 'application/pdf',
+          content: fs.readFileSync(path.join(process.cwd(), 'src/config/assets/files/services_rival.pdf')),
         },
       ],
     };
