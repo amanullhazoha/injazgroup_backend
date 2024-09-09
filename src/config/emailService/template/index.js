@@ -12,7 +12,7 @@ const contactMail = (email, user_name, message) => {
         {
           filename: 'services-rival.pdf',
           contentType: 'application/pdf',
-          content: fs.readFileSync(pdfFile),
+          content: pdfFile,
         },
       ],
     };
