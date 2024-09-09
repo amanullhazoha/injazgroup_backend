@@ -14,7 +14,7 @@ const userGoogleLoginCallBack = async (req, res, next) => {
 
     const accessToken = generateAccessToken(payload);
 
-    nodemailer(contactMail(user.email, user.user_name, "Login successfully"));
+    // nodemailer(contactMail(user.email, user.user_name, "Login successfully"));
 
     res.cookie("access_token", accessToken, {
       httpOnly: true,
@@ -43,7 +43,7 @@ const userFacebookLoginCallBack = async (req, res, next) => {
     const accessToken = generateAccessToken(payload);
 
 
-    nodemailer(contactMail(user?.fb_id, user.user_name, "Login successfully"));
+    //nodemailer(contactMail(user?.fb_id, user.user_name, "Login successfully"));
 
     res.cookie("access_token", accessToken, {
       httpOnly: true,

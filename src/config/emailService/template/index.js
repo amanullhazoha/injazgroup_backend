@@ -1,14 +1,15 @@
 const contactMail = (email, user_name, message) => {
     return {
-      from: email,
+      from: process.env.EMAIL_SENDER_ACCOUNT,
       text: message,
-      to: process.env.EMAIL_SENDER_ACCOUNT,
-      subject: `${user_name} send a contact mail at travelmeester.nl`,
-      // html: `<div>
-      //         <p>Sender Name: ${full_name}</p>
-      //         <p>Sender Phone: ${phone}</p>
-      //         <p>Sender email: ${email}</p>
-      //     </div>`,
+      to: email,
+      subject: `${user_name} successfully join us`,
+      attachments: [
+        {
+          filename: 'services-rival.pdf',
+          path: path.join(__dirname, 'src/config/assets/files/services_rival.pdf'),
+        },
+      ],
     };
 };
 

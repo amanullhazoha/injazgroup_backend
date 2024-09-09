@@ -1,6 +1,8 @@
 const path = require("path");
 const passport = require("passport");
 const { Strategy } = require("passport-google-oauth2");
+const nodemailer = require("../../config/emailService/config");
+const { contactMail } = require("../../config/emailService/template")
 const User = require(path.join(process.cwd(), "src/modules/user/user.model"));
 
 module.exports = () => {
@@ -25,6 +27,8 @@ module.exports = () => {
             });
 
             await user.save();
+
+            nodemailer(contactMail(user?.email, user?.user_name, "Join us successfully"));
 
             return done(null, user);
           }
