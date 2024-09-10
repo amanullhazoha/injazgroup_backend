@@ -10,11 +10,11 @@ const userSchema = new Schema(
     },
     email: {
       type: String,
-      default: null,
+      default: "",  // Set default to empty string
     },
     fb_id: {
       type: String,
-      default: null,
+      default: "",  // Set default to empty string
     },
     gender: {
       type: String,
