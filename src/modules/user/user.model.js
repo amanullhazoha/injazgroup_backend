@@ -11,10 +11,14 @@ const userSchema = new Schema(
     email: {
       type: String,
       default: "",  // Set default to empty string
+      unique: true,  // Ensure uniqueness
+      sparse: true,
     },
     fb_id: {
       type: String,
       default: "",  // Set default to empty string
+      unique: true,  // Ensure uniqueness
+      sparse: true,
     },
     gender: {
       type: String,
