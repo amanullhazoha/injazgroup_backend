@@ -23,7 +23,7 @@ module.exports = () => {
             const user = new User({
               fb_id: profile?.id,
               user_name: profile?.displayName,
-              email: profile?.email ? profile?.email : "",
+              email: profile?.email ? profile?.email : null,
             });
 
             await user.save();

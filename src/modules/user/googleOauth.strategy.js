@@ -21,7 +21,7 @@ module.exports = () => {
 
           if (!isExist) {
             const user = new User({
-              fb_id: "",
+              fb_id: null,
               email: profile?.email,
               user_name: profile?.displayName,
             });
